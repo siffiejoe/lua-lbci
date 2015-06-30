@@ -10,3 +10,5 @@ MIT license.
     http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/#lbci
     http://www.lua.org/
 
+For Lua 5.1 a small modification of the lbci code has been done to
+detect LuaJIT at runtime and bail out with an error.

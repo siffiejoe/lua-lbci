@@ -10,6 +10,7 @@
 
 #include "lua.h"
 #include "lauxlib.h"
+#include "ljdetect/ljdetect.h"
 
 #include "ldebug.h"
 #include "lobject.h"
@@ -179,6 +180,8 @@ static const luaL_reg R[] =
 
 LUALIB_API int luaopen_bci(lua_State *L)
 {
+ if (isluajit(L))
+  luaL_error(L, "LuaJIT is not supported by lbci");
  luaL_register(L,"inspector",R);
  return 1;
 }
